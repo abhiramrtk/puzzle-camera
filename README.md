@@ -55,14 +55,14 @@ npm run dev
 ![Game Demo 2](src/assets/3.png)
 *Another gameplay demo showing the sliding puzzle mechanics with real-time camera feed*
 
-# Diagrams
-![Workflow](Add your workflow/architecture diagram here)
-*Add caption explaining your workflow*
+
 
 ### Project Demo
-# Video
-[Add your demo video link here]
-*Explain what the video demonstrates*
+# Live Demo
+🎮 **Try PaKa yourself:** [https://puzzle-camera.vercel.app/](https://puzzle-camera.vercel.app/)
+*Experience the ultimate unnecessary way to look at yourself! Choose your confusion level and start scrambling your face.*
+
+
 
 
 
