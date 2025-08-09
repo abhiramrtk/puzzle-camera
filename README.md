@@ -19,7 +19,8 @@ PaKa is a real-time camera-based sliding puzzle game that turns your live video 
 Ever looked at yourself in a camera and thought "This is way too easy to understand - I can see my whole face at once!" We realized people desperately needed a way to make looking at themselves needlessly complicated and time-consuming. Why see your face normally when you can scramble it into tiny pieces and spend minutes putting it back together?
 
 ### The Solution (that nobody asked for)
-Our revolutionary PaKa system takes your perfectly normal camera feed and scientifically scrambles it into a sliding puzzle! Choose your preferred level of confusion (3x4, 4x4, or 5x5), and watch as your face gets chopped into pieces and shuffled around. Now you can waste precious minutes of your life clicking to reassemble yourself, because apparently looking at yourself normally was just too mainstream!
+Our revolutionary PaKa system takes your perfectly normal c### Project Documentation
+For Software:amera feed and scientifically scrambles it into a sliding puzzle! Choose your preferred level of confusion (3x4, 4x4, or 5x5), and watch as your face gets chopped into pieces and shuffled around. Now you can waste precious minutes of your life clicking to reassemble yourself, because apparently looking at yourself normally was just too mainstream!
 
 ## Technical Details
 ### Technologies/Components Used
@@ -42,18 +43,17 @@ npm i
 npm run dev
 ```
 
-### Project Documentation
-For Software:
+
 
 # Screenshots (Add at least 3)
-![Screenshot1](Add screenshot 1 here with proper name)
-*Add caption explaining what this shows*
+![Home Page](assets/1.png)
+*The home page showing difficulty level selection - choose your preferred level of face-scrambling confusion!*
 
-![Screenshot2](Add screenshot 2 here with proper name)
-*Add caption explaining what this shows*
+![Game Demo 1](assets/2.png)
+*Live puzzle gameplay in action - watch your camera feed get chopped into pieces for maximum confusion*
 
-![Screenshot3](Add screenshot 3 here with proper name)
-*Add caption explaining what this shows*
+![Game Demo 2](assets/3.png)
+*Another gameplay demo showing the sliding puzzle mechanics with real-time camera feed*
 
 # Diagrams
 ![Workflow](Add your workflow/architecture diagram here)
@@ -64,12 +64,11 @@ For Software:
 [Add your demo video link here]
 *Explain what the video demonstrates*
 
-# Additional Demos
-[Add any extra demo materials/links]
+
 
 ## Team Contributions
-- Amal Shaheen: [Specific contributions]
-- Abhiram R: [Specific contributions]
+- Amal Shaheen: Idea and UI
+- Abhiram R: Implementation of Idea
 
 ---
 Made with ❤️ at TinkerHub Useless Projects 
