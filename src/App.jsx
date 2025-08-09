@@ -9,21 +9,52 @@ function App() {
   const gridSize = { rows: 3, cols: 4 }
   const totalPieces = gridSize.rows * gridSize.cols
 
+  // Replace the shuffleArray function with this improved version
   const shuffleArray = (array) => {
-    // Only shuffle positions that create a solvable puzzle
     let shuffled = [...array];
-    for (let i = shuffled.length - 2; i > 0; i--) {
-      // Don't include the empty piece in shuffling
-      if (!shuffled[i].isEmpty) {
-        const j = Math.floor(Math.random() * i);
-        if (!shuffled[j].isEmpty) {
-          // Swap positions, not IDs
-          const currentPosTemp = shuffled[i].currentPos;
-          shuffled[i].currentPos = shuffled[j].currentPos;
-          shuffled[j].currentPos = currentPosTemp;
+    let currentEmptyIndex = emptyIndex;
+    
+    // Make 100 random valid moves to shuffle
+    for (let i = 0; i < 100; i++) {
+      // Get all possible moves from current empty position
+      const possibleMoves = [];
+      const emptyRow = Math.floor(currentEmptyIndex / gridSize.cols);
+      const emptyCol = currentEmptyIndex % gridSize.cols;
+      
+      // Check all adjacent positions
+      const directions = [
+        [-1, 0], // up
+        [1, 0],  // down
+        [0, -1], // left
+        [0, 1]   // right
+      ];
+      
+      directions.forEach(([dx, dy]) => {
+        const newRow = emptyRow + dx;
+        const newCol = emptyCol + dy;
+        
+        if (newRow >= 0 && newRow < gridSize.rows && 
+            newCol >= 0 && newCol < gridSize.cols) {
+          possibleMoves.push(newRow * gridSize.cols + newCol);
         }
+      });
+      
+      // Make a random move
+      const randomMoveIndex = Math.floor(Math.random() * possibleMoves.length);
+      const newEmptyIndex = possibleMoves[randomMoveIndex];
+      
+      // Swap the pieces
+      const pieceToMove = shuffled.find(p => p.currentPos === newEmptyIndex);
+      const emptyPiece = shuffled.find(p => p.isEmpty);
+      
+      if (pieceToMove && emptyPiece) {
+        const tempPos = pieceToMove.currentPos;
+        pieceToMove.currentPos = emptyPiece.currentPos;
+        emptyPiece.currentPos = tempPos;
+        currentEmptyIndex = newEmptyIndex;
       }
     }
+    
     return shuffled;
   }
 
@@ -38,6 +69,7 @@ function App() {
     // Shuffle the pieces while keeping the empty piece at its position
     const shuffledPieces = shuffleArray(initialPieces);
     setPieces(shuffledPieces);
+    setEmptyIndex(shuffledPieces.find(p => p.isEmpty).currentPos);
 
     // Camera setup
     if (navigator.mediaDevices?.getUserMedia) {
@@ -68,17 +100,24 @@ function App() {
     )
   }
 
+  // Replace the handlePieceClick function with this updated version
   const handlePieceClick = (index) => {
-    if (!canMove(index)) return
+    if (!canMove(index)) return;
 
     setPieces(prevPieces => {
-      const newPieces = [...prevPieces]
-      // Swap clicked piece with empty piece
-      const temp = newPieces[index]
-      newPieces[index] = newPieces[emptyIndex]
-      newPieces[emptyIndex] = temp
-      return newPieces
-    })
+      const newPieces = [...prevPieces];
+      const clickedPiece = newPieces.find(p => p.currentPos === index);
+      const emptyPiece = newPieces.find(p => p.isEmpty);
+
+      if (clickedPiece && emptyPiece) {
+        // Swap positions
+        const tempPos = clickedPiece.currentPos;
+        clickedPiece.currentPos = emptyPiece.currentPos;
+        emptyPiece.currentPos = tempPos;
+      }
+      
+      return newPieces;
+    });
     setEmptyIndex(index)
   }
 
