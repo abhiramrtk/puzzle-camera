@@ -59,7 +59,7 @@ npm run dev
 
 ### Project Demo
 
-🎮 **Try PaKa yourself:** [https://puzzle-camera.vercel.app/](https://puzzle-camera.vercel.app/)
+🎮 **Try PaKa yourself:** [Puzzle-Camera](https://puzzle-camera.vercel.app/)
 *Experience the ultimate unnecessary way to look at yourself! Choose your confusion level and start scrambling your face.*
 
 
