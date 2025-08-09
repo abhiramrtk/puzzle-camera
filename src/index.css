@@ -1,0 +1,56 @@
+:root {
+  --bg: #0b1020;
+  --panel: #0f1724;
+  --accent: #6ee7b7;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, Arial;
+  background: linear-gradient(180deg, #071428 0%, #071a2a 100%);
+  color: #e6eef6;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 28px;
+}
+
+.app {
+  max-width: 980px;
+  width: 100%;
+}
+
+h1 {
+  font-size: 18px;
+  margin: 0 0 8px 0;
+}
+
+.status { margin: 12px 0; color: #c7d2fe; }
+
+.puzzle-wrap {
+  background: rgba(255,255,255,0.02);
+  padding: 16px;
+  border-radius: 8px;
+}
+
+.puzzle-container {
+  position: relative;
+  background: #000;
+  width: 640px; /* overwritten when video loaded */
+  height: 480px; /* overwritten when video loaded */
+  user-select: none;
+  touch-action: none;
+  margin-top: 12px;
+  overflow: hidden;
+}
+
+.puzzle-piece {
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-shadow: 0 6px 18px rgba(2,6,23,0.6);
+  border-radius: 4px;
+  touch-action: none;
+  /* transform controlled inline */
+}
+footer { margin-top: 14px; color: #a7b6d9; font-size: 13px; }
