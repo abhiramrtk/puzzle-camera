@@ -14,7 +14,7 @@ function App() {
   const [difficulty, setDifficulty] = useState(null)
   
   const { canvasSize, updateCanvasSize } = useCanvas(containerRef);
-  const { cameraError, initializeCamera } = useCamera(videoRef, canvasSize);
+  const { cameraError, isInitializing, initializeCamera, stopCamera } = useCamera(videoRef, canvasSize);
   const { 
     pieces, 
     gridSize, 
@@ -31,10 +31,7 @@ function App() {
 
   const handleBack = () => {
     setDifficulty(null);
-    const stream = videoRef.current?.srcObject;
-    if (stream) {
-      stream.getTracks().forEach(track => track.stop());
-    }
+    stopCamera();
   };
 
   const handleCanvasClick = (e) => {
@@ -78,13 +75,26 @@ function App() {
               canvasSize={canvasSize}
               handleCanvasClick={handleCanvasClick}
               cameraError={cameraError}
+              isInitializing={isInitializing}
             />
             <video
               ref={videoRef}
               autoPlay
               playsInline
               muted
+              controls={false}
+              webkit-playsinline="true"
+              x5-playsinline="true"
               className="hidden-video"
+              style={{
+                position: 'absolute',
+                top: '-9999px',
+                left: '-9999px',
+                width: '1px',
+                height: '1px',
+                opacity: 0,
+                pointerEvents: 'none'
+              }}
             />
           </>
         )}
