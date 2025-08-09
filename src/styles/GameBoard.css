@@ -10,15 +10,27 @@
 }
 
 canvas {
-  border: 2px solid #646cff;
+  border: 3px solid rgba(255, 255, 255, 0.3);
   cursor: pointer;
   touch-action: none;
   background: #000;
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
-  border-radius: 8px;
-  box-shadow: 0 4px 20px rgba(100, 108, 255, 0.2);
+  border-radius: 20px;
+  box-shadow: 
+    0 10px 30px rgba(0, 0, 0, 0.3),
+    0 0 0 1px rgba(255, 255, 255, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+canvas:hover {
+  border-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 
+    0 15px 40px rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(255, 255, 255, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
 }
 
 .camera-error {
@@ -26,39 +38,44 @@ canvas {
   bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
-  color: #ff4444;
-  background: rgba(0, 0, 0, 0.9);
-  padding: 16px 24px;
-  border-radius: 12px;
+  color: #ffffff;
+  background: linear-gradient(135deg, #ff6b6b, #ee5a52);
+  padding: 20px 30px;
+  border-radius: 20px;
   text-align: center;
   z-index: 10;
   width: 80%;
   max-width: 400px;
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(15px);
   animation: fadeIn 0.3s ease;
-  border: 1px solid rgba(255, 68, 68, 0.3);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 10px 30px rgba(255, 107, 107, 0.3);
 }
 
 .camera-error p {
-  margin: 0 0 12px 0;
-  font-size: 14px;
-  line-height: 1.4;
+  margin: 0 0 15px 0;
+  font-size: 15px;
+  line-height: 1.5;
+  font-weight: 500;
 }
 
 .retry-button {
-  background: #646cff;
+  background: rgba(255, 255, 255, 0.2);
   color: white;
-  border: none;
-  padding: 8px 16px;
-  border-radius: 6px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  padding: 10px 20px;
+  border-radius: 12px;
   cursor: pointer;
-  font-size: 12px;
-  font-weight: 500;
-  transition: background-color 0.2s ease;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
 }
 
 .retry-button:hover {
-  background: #535bf2;
+  background: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: translateY(-1px);
 }
 
 .camera-loading {
@@ -66,27 +83,28 @@ canvas {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: #646cff;
-  background: rgba(0, 0, 0, 0.8);
-  padding: 24px;
-  border-radius: 12px;
+  color: #ffffff;
+  background: linear-gradient(135deg, #4ecdc4, #44a08d);
+  padding: 30px;
+  border-radius: 20px;
   text-align: center;
   z-index: 10;
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(100, 108, 255, 0.3);
+  backdrop-filter: blur(15px);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 10px 30px rgba(78, 205, 196, 0.3);
 }
 
 .camera-loading p {
-  margin: 12px 0 0 0;
-  font-size: 14px;
-  font-weight: 500;
+  margin: 15px 0 0 0;
+  font-size: 15px;
+  font-weight: 600;
 }
 
 .loading-spinner {
-  width: 32px;
-  height: 32px;
-  border: 3px solid rgba(100, 108, 255, 0.3);
-  border-top: 3px solid #646cff;
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-top: 4px solid #ffffff;
   border-radius: 50%;
   animation: spin 1s linear infinite;
   margin: 0 auto;

@@ -4,18 +4,45 @@ import '../styles/DifficultySelector.css';
 const DifficultySelector = ({ onSelectDifficulty }) => {
   return (
     <div className="difficulty-selection">
-      <h2>Sliding Puzzle Game</h2>
-      <p>Select your difficulty level to start the game</p>
+      <div className="title-container">
+        <h1>🧩 Puzzle Camera</h1>
+        <h2>its just a simple game!</h2>
+      </div>
+      <p>Choose your challenge level and solve the puzzle using your camera feed</p>
       <div className="difficulty-buttons">
-        <button onClick={() => onSelectDifficulty('easy')}>
-          Easy (3×3)
+        <button 
+          className="difficulty-btn easy"
+          onClick={() => onSelectDifficulty('easy')}
+        >
+          <span className="btn-icon">🟢</span>
+          <span className="btn-text">
+            <strong>Easy Mode</strong>
+            <small>3×3 Grid</small>
+          </span>
         </button>
-        <button onClick={() => onSelectDifficulty('medium')}>
-          Medium (3×4)
+        <button 
+          className="difficulty-btn medium"
+          onClick={() => onSelectDifficulty('medium')}
+        >
+          <span className="btn-icon">🟡</span>
+          <span className="btn-text">
+            <strong>Medium Mode</strong>
+            <small>3×4 Grid</small>
+          </span>
         </button>
-        <button onClick={() => onSelectDifficulty('hard')}>
-          Hard (4×4)
+        <button 
+          className="difficulty-btn hard"
+          onClick={() => onSelectDifficulty('hard')}
+        >
+          <span className="btn-icon">🔴</span>
+          <span className="btn-text">
+            <strong>Hard Mode</strong>
+            <small>4×4 Grid</small>
+          </span>
         </button>
+      </div>
+      <div className="footer-text">
+        <p>✨ have fun solving puzzles! ✨</p>
       </div>
     </div>
   );

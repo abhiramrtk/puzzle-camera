@@ -1,56 +1,79 @@
 :root {
-  --bg: #0b1020;
-  --panel: #0f1724;
-  --accent: #6ee7b7;
+  --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #f5576c 75%, #4facfe 100%);
+  --glass-bg: rgba(255, 255, 255, 0.1);
+  --glass-border: rgba(255, 255, 255, 0.2);
+  --text-primary: #ffffff;
+  --text-secondary: rgba(255, 255, 255, 0.8);
+  --shadow-light: 0 8px 32px rgba(31, 38, 135, 0.37);
+  --shadow-heavy: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+* {
+  box-sizing: border-box;
 }
 
 body {
   margin: 0;
-  font-family: Inter, system-ui, Arial;
-  background: linear-gradient(180deg, #071428 0%, #071a2a 100%);
-  color: #e6eef6;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  background: var(--primary-gradient);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+  color: var(--text-primary);
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+#root {
+  min-height: 100vh;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
-  padding: 28px;
 }
 
-.app {
-  max-width: 980px;
-  width: 100%;
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-weight: 700;
+  line-height: 1.2;
 }
 
-h1 {
-  font-size: 18px;
-  margin: 0 0 8px 0;
+p {
+  margin: 0;
+  line-height: 1.6;
 }
 
-.status { margin: 12px 0; color: #c7d2fe; }
-
-.puzzle-wrap {
-  background: rgba(255,255,255,0.02);
-  padding: 16px;
-  border-radius: 8px;
+button {
+  font-family: inherit;
+  outline: none;
 }
 
-.puzzle-container {
-  position: relative;
-  background: #000;
-  width: 640px; /* overwritten when video loaded */
-  height: 480px; /* overwritten when video loaded */
-  user-select: none;
-  touch-action: none;
-  margin-top: 12px;
-  overflow: hidden;
+* {
+  box-sizing: border-box;
 }
 
-.puzzle-piece {
-  position: absolute;
-  top: 0;
-  left: 0;
-  box-shadow: 0 6px 18px rgba(2,6,23,0.6);
+/* Scrollbar styling for webkit browsers */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
   border-radius: 4px;
-  touch-action: none;
-  /* transform controlled inline */
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
 }
 footer { margin-top: 14px; color: #a7b6d9; font-size: 13px; }

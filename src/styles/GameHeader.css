@@ -13,29 +13,37 @@
 .back-button {
   position: absolute;
   left: 20px;
-  padding: 8px 16px;
+  padding: 12px 20px;
   font-size: 14px;
+  font-weight: 600;
   border: none;
-  border-radius: 8px;
-  background: rgba(100, 108, 255, 0.9);
+  border-radius: 15px;
+  background: linear-gradient(135deg, #ff6b6b, #ee5a52);
   color: white;
   cursor: pointer;
   transition: all 0.3s ease;
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
 }
 
 .back-button:hover {
-  background: rgba(83, 91, 242, 0.9);
-  transform: translateY(-1px);
+  background: linear-gradient(135deg, #ff5252, #e53e3e);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255, 107, 107, 0.4);
 }
 
 .difficulty-label {
   color: white;
   font-size: 16px;
-  background: rgba(0, 0, 0, 0.6);
-  padding: 8px 20px;
-  border-radius: 20px;
-  backdrop-filter: blur(4px);
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 12px 25px;
+  border-radius: 25px;
+  backdrop-filter: blur(15px);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 @media (max-width: 768px) {
