@@ -46,13 +46,13 @@ npm run dev
 
 
 # Screenshots (Add at least 3)
-![Home Page](assets/1.png)
+![Home Page](src/assets/1.png)
 *The home page showing difficulty level selection - choose your preferred level of face-scrambling confusion!*
 
-![Game Demo 1](assets/2.png)
+![Game Demo 1](src/assets/2.png)
 *Live puzzle gameplay in action - watch your camera feed get chopped into pieces for maximum confusion*
 
-![Game Demo 2](assets/3.png)
+![Game Demo 2](src/assets/3.png)
 *Another gameplay demo showing the sliding puzzle mechanics with real-time camera feed*
 
 # Diagrams
